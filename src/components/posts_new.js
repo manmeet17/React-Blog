@@ -38,6 +38,11 @@ class PostsNew extends Component{
     }
 }
 
+function validate(){
+
+}
+
 export default reduxForm({
+    validate: validate,
     form: 'PostsNewForm'
 })(PostsNew);
