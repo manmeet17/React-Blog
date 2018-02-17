@@ -38,8 +38,20 @@ class PostsNew extends Component{
     }
 }
 
-function validate(){
+function validate(values){
+    console.log(values);
+    const errors={};
 
+    if(!values.title){
+        errors.title="Enter a title";
+    }
+    if(!values.categories){
+        errors.categories="Enter some categories";
+    }
+    if(!values.content){
+        errors.content="Enter some content";
+    }
+    return errors;
 }
 
 export default reduxForm({
