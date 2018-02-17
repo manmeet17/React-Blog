@@ -1,5 +1,6 @@
 import axios from 'axios';
 export const FETCH_POST="FETCH_POST";
+export const CREATE_POST="CREATE_POST";
 
 const API_KEY="?key=manmeet";
 
@@ -8,5 +9,15 @@ export function fetchPost(){
     return{
         type: FETCH_POST,
         payload: request
-    }
+    };
+}
+
+export function createPost(values){
+    const request=axios.post(`http://reduxblog.herokuapp.com/api/posts${API_KEY}`,values);
+
+    return {
+        type: CREATE_POST,
+        payload: request
+    };
+
 }
