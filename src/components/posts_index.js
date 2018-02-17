@@ -1,12 +1,12 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from "react-router-dom";
-import { fetchPost } from "../actions";
+import { fetchPosts } from "../actions";
 import _ from 'lodash';
 
 class PostsIndex extends Component{
     componentDidMount(){
-        this.props.fetchPost();
+        this.props.fetchPosts();
     }
     
     renderPosts(){
@@ -41,4 +41,4 @@ function mapStateToProps(state){
     return {posts: state.posts};
 }
 
-export default connect(mapStateToProps,{fetchPost: fetchPost})(PostsIndex);
+export default connect(mapStateToProps,{fetchPosts: fetchPosts})(PostsIndex);
